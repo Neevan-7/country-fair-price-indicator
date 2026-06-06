@@ -6,11 +6,11 @@ const router = Router();
 const priceService = new PriceService();
 
 // Report a price
-router.post('/report', authMiddleware, async (req: AuthRequest, res: Response) => {
+router.post('/report', authMiddleware, async (req: Request, res: Response) => {
   try {
     const priceData = await priceService.reportPrice({
       ...req.body,
-      reportedBy: req.user?.id,
+      reportedBy: (req as AuthRequest).user?.id,
     });
 
     res.status(201).json({

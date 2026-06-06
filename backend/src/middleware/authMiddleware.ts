@@ -13,7 +13,7 @@ export interface AuthRequest extends Request {
 
 export const authMiddleware = (req: AuthRequest, res: Response, next: NextFunction) => {
   try {
-    const token = req.headers.authorization?.split(' ')[1];
+    const token = (req as Request).headers.authorization?.split(' ')[1];
 
     if (!token) {
       throw new UnauthorizedError('No authentication token provided');
