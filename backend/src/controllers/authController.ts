@@ -30,12 +30,24 @@ router.post('/register', async (req: Request, res: Response) => {
       message: 'User registered successfully',
     });
   } catch (error: any) {
-    res.status(error.statusCode || 500).json({
-      success: false,
-      message: error.message,
-    });
-  }
-});
+  console.error("REGISTER ERROR");
+  console.error(error);
+
+  res.status(error.statusCode || 500).json({
+    success: false,
+    message: error.message,
+    error: String(error),
+    stack: error.stack,
+  });
+}
+  
+//   catch (error: any) {
+//     res.status(error.statusCode || 500).json({
+//       success: false,
+//       message: error.message,
+//     });
+//   }
+// });
 
 // Login
 router.post('/login', async (req: Request, res: Response) => {
