@@ -25,10 +25,18 @@ const PORT = process.env.PORT || 5000;
 // Security Middleware
 app.use(helmet());
 app.use(compression());
+// app.use(cors({
+//   origin: process.env.CORS_ORIGIN || 'http://localhost:3001',
+//   credentials: true,
+//   optionsSuccessStatus: 200
+// }));
+
 app.use(cors({
-  origin: process.env.CORS_ORIGIN || 'http://localhost:3001',
-  credentials: true,
-  optionsSuccessStatus: 200
+  origin: [
+    "http://localhost:3001",
+    "https://country-fair-price-indicator.vercel.app"
+  ],
+  credentials: true
 }));
 
 // Body Parser Middleware
