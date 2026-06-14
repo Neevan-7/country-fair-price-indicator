@@ -1,6 +1,6 @@
 import { Router, Request, Response } from 'express';
-import { PriceService } from '@services/priceService';
-import { authMiddleware, AuthRequest } from '@middleware/authMiddleware';
+import { PriceService } from '../services/priceService';
+import { authMiddleware, AuthRequest } from '../middleware/authMiddleware';
 
 const router = Router();
 const priceService = new PriceService();

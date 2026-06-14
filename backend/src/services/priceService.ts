@@ -1,8 +1,8 @@
-import { AppDataSource } from '@config/database';
-import { Price } from '@models/Price';
-import { Location } from '@models/Location';
-import { User } from '@models/User';
-import { AppError, NotFoundError } from '@utils/AppError';
+import { AppDataSource } from '../config/database';
+import { Price } from '../models/Price';
+import { Location } from '../models/Location';
+import { User } from '../models/User';
+import { AppError, NotFoundError } from '../utils/AppError';
 import { LessThanOrEqual, MoreThanOrEqual, Like } from 'typeorm';
 
 export class PriceService {

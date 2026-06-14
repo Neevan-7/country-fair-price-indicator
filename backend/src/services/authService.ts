@@ -1,6 +1,6 @@
-import { AppDataSource } from '@config/database';
-import { User } from '@models/User';
-import { AppError } from '@utils/AppError';
+import { AppDataSource } from '../config/database';
+import { User } from '../models/User';
+import { AppError } from '../utils/AppError';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 
