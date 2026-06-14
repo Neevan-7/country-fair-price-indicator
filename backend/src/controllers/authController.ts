@@ -39,7 +39,7 @@ router.post('/register', async (req: Request, res: Response) => {
     error: String(error),
     stack: error.stack,
   });
-}
+}});
   
 //   catch (error: any) {
 //     res.status(error.statusCode || 500).json({
