@@ -11,8 +11,10 @@ export const AppDataSource = new DataSource({
   username: process.env.DB_USERNAME || 'postgres',
   password: process.env.DB_PASSWORD || 'postgres',
   database: process.env.DB_DATABASE || 'country_fair_price_db',
-  synchronize: process.env.NODE_ENV !== 'production',
-  logging: process.env.DB_LOGGING === 'true',
+  //synchronize: process.env.NODE_ENV !== 'production',
+  synchronize: true,
+  //logging: process.env.DB_LOGGING === 'true',
+  logging: true,
   logger: 'advanced-console',
   entities: [
     path.join(__dirname, '../models/**/*.{ts,js}')
